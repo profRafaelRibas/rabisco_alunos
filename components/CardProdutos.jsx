@@ -1,7 +1,7 @@
 export default function CardProdutos(props) {
     return (
         <div className="card">
-            <img src="produtos/placeholder.jpg" className="card-img-top" alt="..."/>
+            <img src={`produtos/${props.nome}.png`} className="card-img-top" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">{props.nome}</h5>
                     <p className="card-text">{props.descricao}</p>
@@ -14,4 +14,10 @@ export default function CardProdutos(props) {
                 </div>
         </div>
     )
+}
+CardProdutos.defaultProps = {
+    nome:'Produto',
+    descricao:'Descrição do produto',
+    quantidade: 0,
+    preco: 0.00
 }
